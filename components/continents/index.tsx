@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { ActivityIndicator, View, Text } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import MainHeader from "../header";
+import styles from "./stylesheet";
 
 interface continent {
   sCode: string;
@@ -29,15 +32,23 @@ const Continents = () => {
   }, []);
 
   return (
-    <View>
-      {isLoading ? (
-        <ActivityIndicator />
-      ) : (
-        data.map((item) => {
-          return <Text>{item.sCode}</Text>;
-        })
-      )}
-    </View>
+    <SafeAreaProvider>
+      <MainHeader />
+      <View style={styles.container}>
+        {isLoading ? (
+          <ActivityIndicator />
+        ) : (
+          data.map((item) => {
+            return (
+              <View>
+                <Text style={styles.code}>{item.sCode}</Text>
+                <Text style={styles.name}>{item.sName}</Text>
+              </View>
+            );
+          })
+        )}
+      </View>
+    </SafeAreaProvider>
   );
 };
 

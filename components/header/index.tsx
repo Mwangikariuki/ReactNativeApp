@@ -1,10 +1,14 @@
 import { Header } from "@rneui/base";
+import { useState } from "react";
+import { View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import DropDownContent from "../dropdown";
 
 interface HeaderProps {
   onClick: () => void;
 }
 
-const MainHeader = (props: HeaderProps) => {
+const Head = (props: HeaderProps) => {
   return (
     <Header
       placement="left"
@@ -17,5 +21,27 @@ const MainHeader = (props: HeaderProps) => {
     />
   );
 };
+
+const MainHeader = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <SafeAreaProvider>
+      <Head
+          onClick={() => {
+            !visible ? setVisible(true) : setVisible(false);
+          }}
+        />
+        {visible ? (
+          <DropDownContent
+            onPress={() => {
+              setVisible(false);
+            }}
+          />
+        ) : (
+          ""
+        )}
+    </SafeAreaProvider>
+  )
+}
 
 export default MainHeader;
