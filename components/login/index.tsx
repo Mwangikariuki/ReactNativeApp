@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import { Input, Icon } from "react-native-elements";
+import { Input, Icon, Button } from "react-native-elements";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import styles from "./stylesheet";
 
@@ -18,6 +18,7 @@ const LoginPage = () => {
           placeholder="Password"
           leftIcon={<Icon name="lock" size={24} color="grey" />}
         />
+        <Button></Button>
       </View>
     </SafeAreaProvider>
   );
