@@ -4,7 +4,7 @@ import MainHeader from "../header";
 const Staff = () => {
     return (
         <View>
-            <MainHeader />
+            {/* <MainHeader /> */}
             <Text>This are the staff</Text>
         </View>
     )

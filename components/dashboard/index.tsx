@@ -21,7 +21,6 @@ const UserData = [
 const DashBoard = () => {
   return (
     <SafeAreaProvider>
-      <MainHeader />
       <View style={styles.container}>
         {UserData.map((item) => {
           return (

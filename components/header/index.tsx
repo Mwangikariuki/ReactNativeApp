@@ -26,22 +26,9 @@ const MainHeader = () => {
   const [visible, setVisible] = useState(false);
   return (
     <SafeAreaProvider>
-      <Head
-          onClick={() => {
-            !visible ? setVisible(true) : setVisible(false);
-          }}
-        />
-        {visible ? (
-          <DropDownContent
-            onPress={() => {
-              setVisible(false);
-            }}
-          />
-        ) : (
-          ""
-        )}
+      
     </SafeAreaProvider>
   )
 }
 
-export default MainHeader;
+export default Head;

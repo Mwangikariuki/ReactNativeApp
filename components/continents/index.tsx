@@ -33,7 +33,6 @@ const Continents = () => {
 
   return (
     <SafeAreaProvider>
-      <MainHeader />
       <View style={styles.container}>
         {isLoading ? (
           <ActivityIndicator />
